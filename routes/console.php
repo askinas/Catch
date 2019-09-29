@@ -15,9 +15,9 @@ use App\Http\Controllers\CatchController;
 */
 
 Artisan::command(
-    'order:process', 
-    function () {
+    'order:process  {output=catch} {type=csv}', 
+    function ($output, $type) {
         $catch = new CatchController;
-        $catch->processOrder();
+        $catch->processOrder($output, $type);
     }
 )->describe('Process Order');
