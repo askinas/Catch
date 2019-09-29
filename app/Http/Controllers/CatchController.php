@@ -67,10 +67,8 @@ class CatchController extends Controller
         ];
         $destination = fopen($destination, 'w');
         fputcsv($destination, $header);
-  
-        $i = 0;
+
         while (! feof($file)) {
-            echo $i++;
             $data = fgets($file);
             $order = json_decode($data, true);
 
